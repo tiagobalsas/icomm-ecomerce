@@ -1,0 +1,22 @@
+.campaign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px 0 160px;
+}
+
+.img-left {
+  width: 100%;
+}
+
+.img-right {
+  width: 100%;
+}
