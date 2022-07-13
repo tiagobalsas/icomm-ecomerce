@@ -11,6 +11,8 @@ function Header() {
         <div className='logobox'>
           <img src={logo} alt='logo-icon' className='logo' />
           <h4 className='title'>MCX</h4>
+        </div>
+        <div>
           <FiShoppingCart />
         </div>
       </div>
