@@ -1,6 +1,8 @@
+import { FiShoppingCart } from 'react-icons/fi';
+
 import logo from '../../../public/assets/logo.png';
 
-import './style.css'
+import './style.css';
 
 function Header() {
   return (
@@ -9,6 +11,7 @@ function Header() {
         <div className='logobox'>
           <img src={logo} alt='logo-icon' className='logo' />
           <h4 className='title'>MCX</h4>
+          <FiShoppingCart />
         </div>
       </div>
     </nav>
