@@ -13,7 +13,7 @@ function Header() {
           <h4 className='title'>MCX</h4>
         </div>
         <div>
-          <FiShoppingCart />
+          <FiShoppingCart size={25} className='shoppingCart' />
         </div>
       </div>
     </nav>

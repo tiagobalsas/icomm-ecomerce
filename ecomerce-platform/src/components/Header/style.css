@@ -19,6 +19,7 @@
 }
 
 .logobox {
+  margin-top: 60px;
   display: flex;
   align-items: center;
 }
@@ -29,4 +30,10 @@
   font-size: 25px;
   letter-spacing: 6px;
   margin-left: 11px;
+}
+
+.shoppingCart {
+  color: #ffffff;
+  position: relative;
+  top: 35px;
 }
