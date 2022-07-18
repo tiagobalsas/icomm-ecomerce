@@ -6,21 +6,21 @@ import './style.css';
 
 function Campaign() {
   return (
-    <section className='campaign'>
-      <section className='content'>
-        <div className='card-left'>
+    <section className='season'>
+      <section className='season__container'>
+        <div className='season__left__box'>
           <img
             src={summerFashion}
-            alt='summer fashion'
-            className='img-left'
-          />
+            alt='summer-collection'
+            className='season__img__left'
+          ></img>
         </div>
-        <div className='card-right'>
+        <div className='season__right__box'>
           <img
             src={blancFashion}
             alt='blanc-collection'
-            className='img-right'
-          />
+            className='season__img__right'
+          ></img>
         </div>
       </section>
     </section>
