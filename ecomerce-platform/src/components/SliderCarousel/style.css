@@ -29,14 +29,12 @@
 .products-carousel {
   justify-content: center;
 }
-.products-carousel button {
-  margin: 30px -21px 0 -42px;
-  color: white;
+.arrow-carousel:hover {
+  background: #444444;
 }
 
 .product-card {
   display: flex;
-
   flex-direction: column;
   border: 1px solid #eeeeee;
   margin: 0 5px 0 5px;
@@ -55,6 +53,12 @@
   align-items: center;
   justify-content: space-around;
   padding: 15px;
+  margin: 0 0 0 0;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .product-comprar {
@@ -111,7 +115,7 @@
   justify-content: space-between;
   margin: 10px 14px 4px 10px;
 }
-.prduct-extras-verao {
+.product-extras-verao {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   border: 1px solid var(--verao-letter);
@@ -119,7 +123,7 @@
   font-size: 13px;
   padding: 5px;
 }
-.prduct-extras-20off {
+.product-extras-20off {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   background-color: var(--off20-color);
@@ -127,7 +131,7 @@
   font-size: 13px;
   padding: 5px;
 }
-.prduct-extras-lancamento {
+.product-extras-lancamento {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   color: white;
@@ -138,4 +142,42 @@
 }
 .heart {
   color: var(--heart);
+  margin: 0 0 0 0;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    max-width: 300px;
+    padding-bottom: 1rem;
+  }
+
+  .products-title {
+    margin-top: -25px;
+  }
+
+  .product-img {
+    max-width: 150px;
+    min-width: 150px;
+    margin: auto;
+  }
+
+  .product-card {
+    height: 400px;
+    width: 240px;
+    margin-bottom: 50px;
+    margin: 0px 0px 0 -127px;
+  }
+  .product-card:hover {
+    height: 460px;
+  }
+
+  .products-container {
+    margin: 0 -40px 0 -40px;
+  }
 }
