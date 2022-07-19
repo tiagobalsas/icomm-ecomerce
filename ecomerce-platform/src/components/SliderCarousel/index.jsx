@@ -9,26 +9,28 @@ import Context from '../../context/Context';
 import './style.css';
 
 const classNameExtras = (extras) => {
-  if(extras === 'VERÃO 2022') return 'prduct-extras-verao';
-  if(extras === '20% OFF') return 'prduct-extras-20off';
-  if(extras === 'LANÇAMENTO') return 'prduct-extras-lancamento';
-}
+  if (extras === 'VERÃO 2022') return 'product-extras-verao';
+  if (extras === '20% OFF') return 'product-extras-20off';
+  if (extras === 'LANÇAMENTO') return 'product-extras-lancamento';
+  return 'product-extras';
+};
 
 function SliderCarousel() {
-  const { products, likedProducts, liked, addToCartProvider, cart } = useContext(Context);
+  const { products, likedProducts, liked, addToCartProvider } =
+    useContext(Context);
 
   const heartProducts = (id) => {
     const alreadyLiked = liked.includes(id);
     return (
-      <div className='heart' onClick={() => likedProducts(id)}>
+      <button type='button' className='heart' onClick={() => likedProducts(id)}>
         {alreadyLiked ? <FaHeart size={30} /> : <FiHeart size={30} />}
-      </div>
+      </button>
     );
   };
 
   const addToCart = (id) => {
     addToCartProvider(id);
-  }
+  };
 
   const settings = {
     dots: false,
@@ -36,6 +38,19 @@ function SliderCarousel() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+          nextArrow: false,
+          prevArrow: false,
+        },
+      },
+    ],
   };
 
   const stylesPrevArrow = {
@@ -45,6 +60,8 @@ function SliderCarousel() {
     left: '-2rem',
     top: '8rem',
     cursor: 'pointer',
+    margin: '30px -21px 0 -42px',
+    color: 'white',
   };
 
   const stylesNextArrow = {
@@ -54,14 +71,16 @@ function SliderCarousel() {
     right: '-2rem',
     top: '8rem',
     cursor: 'pointer',
+    margin: '30px -42px 0 -42px',
+    color: 'white',
   };
 
   function MouseOver(event) {
     event.target.style.background = '#444444';
   }
 
-  function MouseOut(event){
-    event.target.style.background= '#EEEEEE';
+  function MouseOut(event) {
+    event.target.style.background = '#EEEEEE';
   }
 
   const PrevArrow = (props) => {
@@ -69,13 +88,13 @@ function SliderCarousel() {
 
     return (
       <button
-      type="button"
-      onClick={onClick}
-      style={{ ...style, ...stylesPrevArrow }}
-      onMouseOver={ MouseOver }
-      onMouseOut={ MouseOut }
+        type='button'
+        onClick={onClick}
+        style={{ ...style, ...stylesPrevArrow }}
+        onMouseOver={MouseOver}
+        onMouseOut={MouseOut}
       >
-        <RiArrowLeftSLine size={40} className='arrow' />
+        <RiArrowLeftSLine size={40} className='arrow-carousel' />
       </button>
     );
   };
@@ -85,24 +104,24 @@ function SliderCarousel() {
 
     return (
       <button
-      type="button"
-      onClick={onClick}
-      style={{ ...style, ...stylesNextArrow }}
-      onMouseOver={ MouseOver }
-      onMouseOut={ MouseOut }
+        type='button'
+        onClick={onClick}
+        style={{ ...style, ...stylesNextArrow }}
+        onMouseOver={MouseOver}
+        onMouseOut={MouseOut}
       >
-        <RiArrowRightSLine size={40} className='arrow' />
+        <RiArrowRightSLine size={40} className='arrow-carousel' />
       </button>
     );
   };
 
   return (
-    <section className="products">
-      <div className="products-container">
-        <div className="products-title">
+    <section className='products'>
+      <div className='products-container'>
+        <div className='products-title'>
           <h1>DESTAQUES</h1>
         </div>
-        <div className="products-carousel">
+        <div className='products-carousel'>
           <Slider
             prevArrow={<PrevArrow />}
             nextArrow={<NextArrow />}
@@ -110,27 +129,29 @@ function SliderCarousel() {
           >
             {products.map(
               ({ id, image, products, price, priceParcels, extras }) => (
-                <div>
-                <div className="product-card">
-                  <div className="product-extras">
-                    <h4 className={ classNameExtras(extras) }>
-                      { extras }
-                    </h4>
-                    { heartProducts(id) }
-                  </div>
-                  <div className="product-imgAndname">
-                    <img className="product-img" src={image} alt={products} />
-                  </div>
-                  <div className="product-info">
-                    <h3 className="product-name">{products}</h3>
-                    <h4 className="product-price">{price}</h4>
-                    <p className="product-price_x">{priceParcels}</p>
-                  </div>
-                  <div onClick={() => addToCart(id) } className="product-comprar">
-                    <div className="comprar">COMPRAR</div>
+                <div key={id}>
+                  <div className='product-card'>
+                    <div className='product-extras'>
+                      <h4 className={classNameExtras(extras)}>{extras}</h4>
+                      {heartProducts(id)}
+                    </div>
+                    <div className='product-imgAndname'>
+                      <img className='product-img' src={image} alt={products} />
+                    </div>
+                    <div className='product-info'>
+                      <h3 className='product-name'>{products}</h3>
+                      <h4 className='product-price'>{price}</h4>
+                      <p className='product-price_x'>{priceParcels}</p>
+                    </div>
+                    <button
+                      type='button'
+                      onClick={() => addToCart(id)}
+                      className='product-comprar'
+                    >
+                      <div className='comprar'>COMPRAR</div>
+                    </button>
                   </div>
                 </div>
-              </div>
               )
             )}
           </Slider>
