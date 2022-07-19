@@ -7,23 +7,23 @@
   margin-top: 7rem;
 }
 
-.products__title {
+.products-title {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-.products__carousel {
+.products-carousel {
   padding: 35px 106px 0px 106px;
 }
 
-.products__carousel button {
+.products-carousel button {
   background-color: var(--button-grey);
   width: 40px;
   min-height: 53px;
 }
 
-.products__title {
+.products-title {
   font-family: 'Nunito', sans-serif;
   font-size: 24px;
   font-weight: 200;
@@ -34,7 +34,7 @@
   font-size: 15px;
 }
 
-/* arrumar magrin do carrossel */
+
 .product-container {
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@
   padding: 0 0 0 0;
 }
 
-/* tentando arrumar leter do carrosel*/
+
 .product-info {
   display: flex;
   align-items: center;

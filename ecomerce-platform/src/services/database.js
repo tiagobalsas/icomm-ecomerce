@@ -36,6 +36,38 @@ const api = [
     priceParcels: '12 X R$63,25',
     extras: 'LANÇAMENTO',
   },
+  {
+    id: 5,
+    image: macacao,
+    product: 'MACACÃO FEMININO MARIA FILÓ SOBREPOSIÇÃO',
+    price: 'R$ 759,00',
+    priceParcels: '12 X R$63,25',
+    extras: 'VERÃO 2022',
+  },
+  {
+    id: 6,
+    image: regata,
+    product: 'REGATA FEMININA DE TRICOT COM OMBREIRA',
+    price: 'R$ 759,00',
+    priceParcels: '12 X R$63,25',
+    extras: '20% OFF',
+  },
+  {
+    id: 7,
+    image: blusa,
+    product: 'BLUSA FEMININA SILK MERCI',
+    price: 'R$ 759,00',
+    priceParcels: '12 X R$63,25',
+    extras: '',
+  },
+  {
+    id: 8,
+    image: blazer,
+    product: 'BLAZER FEMININA LIOCEL PUNHO',
+    price: 'R$ 759,00',
+    priceParcels: '12 X R$63,25',
+    extras: 'LANÇAMENTO',
+  },
 ];
 
 export default api;
