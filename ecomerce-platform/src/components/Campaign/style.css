@@ -1,15 +1,28 @@
 .season-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 90px 140px 20px 160px;
+  grid-gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 90px 0 160px;
 }
 
-.season-left-box {
-  padding-right: 10px;
+.season-img-left {
+  width: 100%;
 }
 
-.season-right-box {
-  padding-left: 10px;
+.season-img-right {
+  width: 100%;
+}
+
+.season-right-text {
+  margin-top: -10rem;
+  margin-left: 2rem;
+}
+
+.season-left-text {
+  margin-top: -11rem;
+  margin-left: 3rem;
 }
 
 .season {
@@ -24,4 +37,30 @@
   color: var(--white);
   font-size: 25px;
   letter-spacing: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .season-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 64px;
+    width: 100%;
+  }
+
+  .season-container img {
+    padding: 0px 15px 0 20px;
+  }
+
+  .season h4 {
+    font-size: 20px;
+  }
+
+  .season-right-text {
+    margin-top: -9rem;
+    margin-left: 3rem;
+  }
+
+  .season-left-text {
+    margin-top: -8rem;
+    margin-left: 3rem;
+  }
 }
