@@ -9,21 +9,22 @@ import Context from '../../context/Context';
 import './style.css';
 
 const classNameExtras = (extras) => {
-  if (extras === 'VERÃO 2022') return 'prduct-extras-verao';
-  if (extras === '20% OFF') return 'prduct-extras-20off';
-  if (extras === 'LANÇAMENTO') return 'prduct-extras-lancamento';
+  if (extras === 'VERÃO 2022') return 'product-extras-verao';
+  if (extras === '20% OFF') return 'product-extras-20off';
+  if (extras === 'LANÇAMENTO') return 'product-extras-lancamento';
+  return 'product-extras';
 };
 
 function SliderCarousel() {
-  const { products, likedProducts, liked, addToCartProvider, cart } =
+  const { products, likedProducts, liked, addToCartProvider } =
     useContext(Context);
 
   const heartProducts = (id) => {
     const alreadyLiked = liked.includes(id);
     return (
-      <div className='heart' onClick={() => likedProducts(id)}>
+      <button type='button' className='heart' onClick={() => likedProducts(id)}>
         {alreadyLiked ? <FaHeart size={30} /> : <FiHeart size={30} />}
-      </div>
+      </button>
     );
   };
 
@@ -128,7 +129,7 @@ function SliderCarousel() {
           >
             {products.map(
               ({ id, image, products, price, priceParcels, extras }) => (
-                <div>
+                <div key={id}>
                   <div className='product-card'>
                     <div className='product-extras'>
                       <h4 className={classNameExtras(extras)}>{extras}</h4>
@@ -142,12 +143,13 @@ function SliderCarousel() {
                       <h4 className='product-price'>{price}</h4>
                       <p className='product-price_x'>{priceParcels}</p>
                     </div>
-                    <div
+                    <button
+                      type='button'
                       onClick={() => addToCart(id)}
                       className='product-comprar'
                     >
                       <div className='comprar'>COMPRAR</div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               )
