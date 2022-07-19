@@ -6,6 +6,7 @@ import Context from './Context';
 function Provider({ children }) {
   const [products, setProducts] = useState([...data]);
   const [liked, setLiked] = useState([]);
+  const [ cart, setCart ] = useState([]);
 
   const likedProducts = (id) => {
     const alreadyLiked = liked.includes(id);
@@ -22,11 +23,17 @@ function Provider({ children }) {
     }
   };
 
+  const addToCartProvider = (id) => {
+    setCart([ ...cart, id ]);
+  }
+
   const contextValue = {
     setProducts,
     products,
-    liked,
+    liked, 
     likedProducts,
+    addToCartProvider, 
+    cart,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
