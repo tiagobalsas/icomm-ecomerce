@@ -20,7 +20,7 @@ function SliderCarousel() {
     );
   };
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -28,7 +28,7 @@ function SliderCarousel() {
   };
 
   const stylesPrevArrow = {
-    backgroundColor: '#EEEEEE',
+    backgroundColor: '#CCCCCC',
     border: 'none',
     position: 'absolute',
     left: '-2rem',
@@ -37,7 +37,7 @@ function SliderCarousel() {
   };
 
   const stylesNextArrow = {
-    backgroundColor: '#EEEEEE',
+    backgroundColor: '#CCCCCC',
     border: 'none',
     position: 'absolute',
     right: '-2rem',
@@ -54,7 +54,7 @@ function SliderCarousel() {
         onClick={onClick}
         style={{ ...style, ...stylesPrevArrow }}
       >
-        <RiArrowLeftSLine className='arrow' />
+        <RiArrowLeftSLine size={40} className='arrow' />
       </button>
     );
   };
@@ -68,7 +68,7 @@ function SliderCarousel() {
         onClick={onClick}
         style={{ ...style, ...stylesNextArrow }}
       >
-        <RiArrowRightSLine className='arrow' />
+        <RiArrowRightSLine size={40} className='arrow' />
       </button>
     );
   };
