@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Slider from 'react-slick';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 
@@ -16,21 +17,21 @@ function SliderCarousel() {
   };
 
   const stylesPrevArrow = {
-    backgroundColor: "#EEEEEE",
-    border: "none",
-    position: "absolute",
-    left: "-2rem",
-    top: "8rem",
-    cursor: "pointer",
+    backgroundColor: '#EEEEEE',
+    border: 'none',
+    position: 'absolute',
+    left: '-2rem',
+    top: '8rem',
+    cursor: 'pointer',
   };
 
   const stylesNextArrow = {
-    backgroundColor: "#EEEEEE",
-    border: "none",
-    position: "absolute",
-    right: "-2rem",
-    top: "8rem",
-    cursor: "pointer",
+    backgroundColor: '#EEEEEE',
+    border: 'none',
+    position: 'absolute',
+    right: '-2rem',
+    top: '8rem',
+    cursor: 'pointer',
   };
 
   const PrevArrow = (props) => {
