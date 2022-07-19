@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FiHeart } from 'react-icons/fi';
+import { FaHeart } from 'react-icons/fa';
+
 import Slider from 'react-slick';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 
+import Context from '../../context/Context';
 import './style.css';
 
-import data from '../../services/database';
-
 function SliderCarousel() {
+  const { products, likedProducts, liked } = useContext(Context);
+
+  const heartProducts = (id) => {
+    const alreadyLiked = liked.includes(id);
+    return (
+      <div className='heart' onClick={() => likedProducts(id)}>
+        {alreadyLiked ? <FaHeart size={30} /> : <FiHeart size={30} />}
+      </div>
+    );
+  };
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -16,21 +28,21 @@ function SliderCarousel() {
   };
 
   const stylesPrevArrow = {
-    backgroundColor: "#EEEEEE",
-    border: "none",
-    position: "absolute",
-    left: "-2rem",
-    top: "8rem",
-    cursor: "pointer",
+    backgroundColor: '#CCCCCC',
+    border: 'none',
+    position: 'absolute',
+    left: '-2rem',
+    top: '8rem',
+    cursor: 'pointer',
   };
 
   const stylesNextArrow = {
-    backgroundColor: "#EEEEEE",
-    border: "none",
-    position: "absolute",
-    right: "-2rem",
-    top: "8rem",
-    cursor: "pointer",
+    backgroundColor: '#CCCCCC',
+    border: 'none',
+    position: 'absolute',
+    right: '-2rem',
+    top: '8rem',
+    cursor: 'pointer',
   };
 
   const PrevArrow = (props) => {
@@ -42,7 +54,7 @@ function SliderCarousel() {
         onClick={onClick}
         style={{ ...style, ...stylesPrevArrow }}
       >
-        <RiArrowLeftSLine />
+        <RiArrowLeftSLine size={40} className='arrow' />
       </button>
     );
   };
@@ -56,7 +68,7 @@ function SliderCarousel() {
         onClick={onClick}
         style={{ ...style, ...stylesNextArrow }}
       >
-        <RiArrowRightSLine />
+        <RiArrowRightSLine size={40} className='arrow' />
       </button>
     );
   };
@@ -73,18 +85,27 @@ function SliderCarousel() {
             nextArrow={<NextArrow />}
             {...settings}
           >
-            {data.map(({ image, product, price, price_x }) => (
-              <div>
-                <div className='product-container'>
-                  <img className='product-img' src={image} alt={product} />
-                  <div className='product-info'>
-                    <h3 className='product-name'>{product}</h3>
-                    <h4 className='product-price'>{price}</h4>
-                    <p className='product-price_x'>{price_x}</p>
+            {products.map(
+              ({ id, image, product, price, priceParcels, extras }) => (
+                <div>
+                  <div className='product-container'>
+                    <div className='product-extras'>
+                      <h4>{extras}</h4>
+                      {heartProducts(id)}
+                    </div>
+                    <img className='product-img' src={image} alt={product} />
+                    <div className='product-info'>
+                      <h3 className='product-name'>{product}</h3>
+                      <h4 className='product-price'>{price}</h4>
+                      <p className='product-price_x'>{priceParcels}</p>
+                    </div>
+                    <div className="product-comprar">
+                    <div className="comprar">COMPRAR</div>
+                  </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </Slider>
         </div>
       </div>
