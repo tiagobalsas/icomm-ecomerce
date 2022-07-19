@@ -7,19 +7,19 @@ import './style.css';
 function Campaign() {
   return (
     <section className='season'>
-      <section className='season__container'>
-        <div className='season__left__box'>
+      <section className='season-container'>
+        <div className='season-left-box'>
           <img
             src={summerFashion}
             alt='summer-collection'
-            className='season__img__left'
+            className='season-img-left'
           ></img>
         </div>
-        <div className='season__right__box'>
+        <div className='season-right-box'>
           <img
             src={blancFashion}
             alt='blanc-collection'
-            className='season__img__right'
+            className='season-img-right'
           ></img>
         </div>
       </section>

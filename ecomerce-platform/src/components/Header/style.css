@@ -1,12 +1,13 @@
 :root {
   --grey: #444444;
   --white: #ffffff;
+  --cart-number: #EBD7CE
 }
 
 .header {
   width: 100%;
   z-index: 100;
-  position: fixed;
+  position: fixed; 
   background: var(--grey);
   height: 70px;
   top: 0;
@@ -14,7 +15,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.header__container {
+.header-container {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -22,11 +23,11 @@
   justify-content: space-between;
 }
 
-.header__logobox {
+.header-logobox {
   display: flex;
   align-items: center;
 }
-.header__logobox > h4 {
+.header-logobox > h4 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   color: var(--white);
@@ -35,13 +36,32 @@
   margin-left: 11px;
 }
 
-.header__logo {
+.header-logo {
   max-width: 30px;
   max-height: 100%;
 }
 
-.header__cart {
+.header-cart {
   color: var(--white);
   font-size: 22px;
   height: 22px;
+}
+
+.header-cart {
+  color: var(--white);
+  position: relative;
+  top: -4px;
+  right: -5px;
+}
+
+.cart-number {
+  position: relative;
+  top: 8px;
+  right: -30px;
+  display: grid;
+  justify-content: center;
+  background: var(--cart-number);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }
